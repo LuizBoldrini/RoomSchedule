@@ -128,7 +128,7 @@
             <input type="date" id="date" name="date" />
           </div>
           <div id="textfield" met>
-            <label for="">Solicitante: </label>
+            <label for="requester">Solicitante: </label>
             <br />
             <input
               type="text"
@@ -154,27 +154,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>10/09/2023</td>
-                <td>1</td>
-                <td>A</td>
-                <td>Luiz Emanuel</td>
-                <td class="txt-center"><input type="checkbox" /></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <td>11/09/2023</td>
-                <td>2</td>
-                <td>D</td>
-                <td>Isaac</td>
-                <td class="txt-center"><input type="checkbox" /></td>
+              <tr id="before-table">
+                <td><%= date %></td>
+                <td><%= room %></td>
+                <td><%= block %></td>
+                <td><%= requester %></td>
               </tr>
             </tbody>
           </table>
         </div>
         <div id="btn-cancel">
-          <button class="btn-cancel">Reservar</button>
+          <button class="btn-cancel">Ver Todas</button>
         </div>
       </form>
     </div>
