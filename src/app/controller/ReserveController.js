@@ -11,7 +11,7 @@ class ReserveController {
     const requester = reqBody.requester
     try {
       const createReserves = await Reserve.create(reqBody) 
-
+      
       return res.render("index", {date: dateFormat, room: room, block: block, requester: requester})
     } catch (error) {
       return res.send(error)
