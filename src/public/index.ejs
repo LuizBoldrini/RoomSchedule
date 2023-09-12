@@ -67,17 +67,22 @@
         cursor: pointer;
         box-shadow: 0px 10px 40px -12px #00ff8052;
       }
-      .btn-cancel {
+      .btn-get {
         margin: 20px 15px;
         border: 8px #b22222 solid;
         border-radius: 6%;
         font-weight: 400;
-        color: white;
         background: #b22222;
         letter-spacing: 1px;
         cursor: pointer;
         box-shadow: 0px 10px 40px -12px #8b0000;
       }
+
+      .btn-get > a {
+        text-decoration: none;
+        color: white;
+      }
+
       #table {
         padding: 5px 14px;
         display: flex;
@@ -125,7 +130,7 @@
           <div id="textfield">
             <label for="date">Selecione a Data:</label>
             <br />
-            <input type="date" id="date" name="date" />
+            <input type="date" id="date" name="date" min="<%= new Date().toISOString().split("T")[0] %>" />
           </div>
           <div id="textfield" met>
             <label for="requester">Solicitante: </label>
@@ -163,8 +168,8 @@
             </tbody>
           </table>
         </div>
-        <div id="btn-cancel">
-          <button class="btn-cancel">Ver Todas</button>
+        <div id="btn-get">
+          <button class="btn-get"><a href="./calender.ejs" target="_blank">Ver todas</a></button>
         </div>
       </form>
     </div>

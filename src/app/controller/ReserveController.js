@@ -11,6 +11,7 @@ class ReserveController {
     const requester = reqBody.requester
     try {
       const createReserves = await Reserve.create(reqBody) 
+
       return res.render("index", {date: dateFormat, room: room, block: block, requester: requester})
     } catch (error) {
       return res.send(error)
@@ -18,7 +19,16 @@ class ReserveController {
   }
 
   async pageInit(req, res) {
-    return res.render("index")
+    const reqBody = req.body
+    const block = reqBody.block
+    const room = reqBody.room
+    const date = reqBody.date
+    const requester = reqBody.requester
+    try{
+      return res.render("index", {date: date, room: room, block: block, requester: requester})
+    } catch(error){
+      return res.send(error)
+    }
   }
 }
 
