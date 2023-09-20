@@ -159,7 +159,7 @@
             <tbody>
               <% reserves.forEach(function(data) { %>
                 <tr>
-                  <td><%= moment(data.date).format('DD/MM/YYYY') %></td>
+                  <td><%= moment(data.date).add(1, 'days').format('DD/MM/YYYY') %></td>
                   <td><%= data.course %></td>
                   <td><%= data.semester %></td>
                   <td><%= data.requester %></td>
