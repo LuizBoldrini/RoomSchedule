@@ -108,23 +108,25 @@
         <div id="space-between"></div>
         <div id="reserve-breed">
           <div id="textfield">
-            <label for="block">Selecione o Bloco:</label>
+            <label for="block">Nome do Curso:</label>
             <br />
-            <select name="block">
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-            </select>
+            <input type="text" name="course" placeholder="curso" required
+            />
           </div>
           <div id="textfield">
-            <label for="room">Selecione a Sala:</label>
+            <label for="semester">Selecione o Semestre:</label>
             <br />
-            <select name="room">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
+            <select name="semester">
+              <option value="1º Semestre">1º Semestre</option>
+              <option value="2º Semestre">2º Semestre</option>
+              <option value="3º Semestre">3º Semestre</option>
+              <option value="4º Semestre">4º Semestre</option>
+              <option value="5º Semestre">5º Semestre</option>
+              <option value="6º Semestre">6º Semestre</option>
+              <option value="7º Semestre">7º Semestre</option>
+              <option value="8º Semestre">8º Semestre</option>
+              <option value="9º Semestre">9º Semestre</option>
+              <option value="10º Semestre">10º Semestre</option>
             </select>
           </div>
           <div id="textfield">
@@ -135,11 +137,7 @@
           <div id="textfield" met>
             <label for="requester">Solicitante: </label>
             <br />
-            <input
-              type="text"
-              name="requester"
-              placeholder="solicitante"
-              required
+            <input type="text" name="requester" placeholder="solicitante" required
             />
           </div>
         </div>
@@ -153,23 +151,22 @@
             <thead>
               <tr>
                 <th>Data</th>
-                <th>Sala</th>
-                <th>Bloco</th>
+                <th>Curso</th>
+                <th>Semestre</th>
                 <th>Solicitante</th>
               </tr>
             </thead>
             <tbody>
-              <tr id="before-table">
-                <td><%= date %></td>
-                <td><%= room %></td>
-                <td><%= block %></td>
-                <td><%= requester %></td>
-              </tr>
+              <% reserves.forEach(function(data) { %>
+                <tr>
+                  <td><%= moment(data.date).format('DD/MM/YYYY') %></td>
+                  <td><%= data.course %></td>
+                  <td><%= data.semester %></td>
+                  <td><%= data.requester %></td>
+                </tr>
+              <% }) %>
             </tbody>
           </table>
-        </div>
-        <div id="btn-get">
-          <button class="btn-get"><a href="./calender.ejs" target="_blank">Ver todas</a></button>
         </div>
       </form>
     </div>

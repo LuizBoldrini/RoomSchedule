@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
 const Reserve = new mongoose.Schema({
-    block: {
+    course: {
         type: String
     },
-    room: {
+    semester: {
         type: String
     },
     date: {
